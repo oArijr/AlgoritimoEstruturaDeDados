@@ -1,4 +1,5 @@
 public class ListaEncadeada implements Lista {
+    protected NoLista primeiro;
 
     @Override
     public void inserir(int valor) {
