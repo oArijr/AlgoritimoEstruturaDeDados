@@ -1,5 +1,10 @@
 public class ListaEncadeada implements Lista {
     protected NoLista primeiro;
+    protected NoLista ultimo;
+    protected int qtdeElementos;
+
+    public ListaEncadeada(){
+    }
 
     @Override
     public void inserir(int valor) {
