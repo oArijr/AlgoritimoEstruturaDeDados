@@ -16,6 +16,7 @@ public class ListaEncadeada implements Lista {
             this.ultimo.setProx(novo);   
         }
         this.ultimo = novo;
+        qtdeElementos++;
     }
 
     @Override
