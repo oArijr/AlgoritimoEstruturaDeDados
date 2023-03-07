@@ -8,8 +8,14 @@ public class ListaEncadeada implements Lista {
 
     @Override
     public void inserir(int valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'inserir'");
+        NoLista novo = new NoLista();
+        novo.setInfo(valor);
+        if(this.estaVazia()){
+            this.primeiro = novo;
+        } else {
+            this.ultimo.setProx(novo);   
+        }
+        this.ultimo = novo;
     }
 
     @Override
