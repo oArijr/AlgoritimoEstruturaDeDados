@@ -1,21 +1,21 @@
 
-public class NoLista {
-    private int info;
-    private NoLista prox;
+public class NoLista<T> {
+    private T info;
+    private NoLista<T> prox;
 
     public NoLista(){
     }
 
-    public int getInfo() {
+    public T getInfo() {
         return info;
     }
-    public void setInfo(int info) {
+    public void setInfo(T info) {
         this.info = info;
     }
-    public NoLista getProx() {
+    public NoLista<T> getProx() {
         return prox;
     }
-    public void setProx(NoLista prox) {
+    public void setProx(NoLista<T> prox) {
         this.prox = prox;
     }
 }

@@ -1,4 +1,4 @@
-public class ListaEncadeada implements Lista {
+public class ListaEncadeada<T> implements Lista<T> {
     protected NoLista primeiro;
     protected NoLista ultimo;
     protected int qtdeElementos;
@@ -7,8 +7,8 @@ public class ListaEncadeada implements Lista {
     }
 
     @Override
-    public void inserir(int valor) {
-        NoLista novo = new NoLista();
+    public void inserir(T valor) {
+        NoLista<T> novo =  new NoLista<T>();
         novo.setInfo(valor);
         if (this.estaVazia()) {
             this.primeiro = novo;
@@ -20,7 +20,7 @@ public class ListaEncadeada implements Lista {
     }
 
     @Override
-    public int buscar(int valor) {
+    public T buscar(T valor) {
         NoLista p = primeiro;
         int cont = 0;
         while (p != null) {
@@ -42,7 +42,7 @@ public class ListaEncadeada implements Lista {
     }
 
     @Override
-    public void retirar(int valor) {
+    public void retirar(T valor) {
         NoLista p = primeiro;
         NoLista a = null;
         while (p != null && p.getInfo() != valor) {
@@ -74,7 +74,7 @@ public class ListaEncadeada implements Lista {
     }
 
     @Override
-    public Lista copiar() {
+    public Lista<T> copiar() {
         Lista copia = new ListaEncadeada();
         for (NoLista p = primeiro; p != null; p = p.getProx()) {
             copia.inserir(p.getInfo());
@@ -84,7 +84,7 @@ public class ListaEncadeada implements Lista {
     }
 
     @Override
-    public Lista dividir() {
+    public Lista<T> dividir() {
         ListaEncadeada outra = new ListaEncadeada();
         int divisao = getTamanho()/2;
         NoLista anterior = null;
@@ -108,14 +108,14 @@ public class ListaEncadeada implements Lista {
     }
 
     @Override
-    public void concatenar(Lista outraLista) {
+    public void concatenar(Lista<T> outraLista) {
         for(int i = 0; i < outraLista.getTamanho(); i++){
             this.inserir(outraLista.pegar(i));
         }
     }
 
     @Override
-    public int pegar(int pos) {
+    public T pegar(int pos) {
         if (pos < 0 || pos > this.qtdeElementos) {
             throw new IndexOutOfBoundsException("posição:" + pos + " não existe!");
         }
@@ -133,7 +133,7 @@ public class ListaEncadeada implements Lista {
     }
 
     @Override
-    public void inserir(int valor, int pos) {
+    public void inserir(T valor, int pos) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'inserir'");
     }
