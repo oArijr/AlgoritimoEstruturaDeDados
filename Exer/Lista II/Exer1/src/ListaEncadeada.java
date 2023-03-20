@@ -64,7 +64,7 @@ public class ListaEncadeada<T> implements Lista<T> {
 
     @Override
     public String exibir() {
-        NoLista p = primeiro;
+        NoLista<T> p = primeiro;
         String str = "[";
         while (p != null) {
             str += p.getInfo() + ", ";

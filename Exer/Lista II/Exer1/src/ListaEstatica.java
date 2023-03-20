@@ -60,8 +60,8 @@ public class ListaEstatica<T> implements Lista<T> {
     }
 
     @Override
-    public Lista copiar() { // contribuição Maria Clara
-        Lista outra = new ListaEstatica();
+    public Lista<T> copiar() { // contribuição Maria Clara
+        Lista<T> outra = new ListaEstatica<T>();
         for (int i = 0; i < this.tamanho; i++) {
             outra.inserir(this.info[i]);
         }
@@ -70,9 +70,9 @@ public class ListaEstatica<T> implements Lista<T> {
     }
 
     @Override
-    public Lista dividir() {
+    public Lista<T> dividir() {
         int metade = this.tamanho / 2;
-        Lista outra = new ListaEstatica();
+        Lista<T> outra = new ListaEstatica();
         for (int i = metade; i < this.tamanho; i++) {
             outra.inserir(this.info[i]);
         }
