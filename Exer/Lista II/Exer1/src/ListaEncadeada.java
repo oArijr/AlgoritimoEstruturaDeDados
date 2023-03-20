@@ -1,6 +1,6 @@
 public class ListaEncadeada<T> implements Lista<T> {
-    protected NoLista primeiro;
-    protected NoLista ultimo;
+    protected NoLista<T> primeiro;
+    protected NoLista<T> ultimo;
     protected int qtdeElementos;
 
     public ListaEncadeada() {
@@ -20,8 +20,8 @@ public class ListaEncadeada<T> implements Lista<T> {
     }
 
     @Override
-    public T buscar(T valor) {
-        NoLista p = primeiro;
+    public int buscar(T valor) {
+        NoLista<T> p = primeiro;
         int cont = 0;
         while (p != null) {
             if (p.getInfo() == valor) {
@@ -43,8 +43,8 @@ public class ListaEncadeada<T> implements Lista<T> {
 
     @Override
     public void retirar(T valor) {
-        NoLista p = primeiro;
-        NoLista a = null;
+        NoLista<T> p = primeiro;
+        NoLista<T> a = null;
         while (p != null && p.getInfo() != valor) {
             a = p;
             p = p.getProx();
@@ -75,8 +75,8 @@ public class ListaEncadeada<T> implements Lista<T> {
 
     @Override
     public Lista<T> copiar() {
-        Lista copia = new ListaEncadeada();
-        for (NoLista p = primeiro; p != null; p = p.getProx()) {
+        Lista<T> copia = new ListaEncadeada<T>();
+        for (NoLista<T> p = primeiro; p != null; p = p.getProx()) {
             copia.inserir(p.getInfo());
         }
         return copia;
@@ -85,10 +85,10 @@ public class ListaEncadeada<T> implements Lista<T> {
 
     @Override
     public Lista<T> dividir() {
-        ListaEncadeada outra = new ListaEncadeada();
+        ListaEncadeada<T> outra = new ListaEncadeada<T>();
         int divisao = getTamanho()/2;
-        NoLista anterior = null;
-        NoLista atual = primeiro;
+        NoLista<T> anterior = null;
+        NoLista<T> atual = primeiro;
         for(int i = 0; i < divisao; i++){
             anterior = atual;
             atual = atual.getProx();
@@ -119,7 +119,7 @@ public class ListaEncadeada<T> implements Lista<T> {
         if (pos < 0 || pos > this.qtdeElementos) {
             throw new IndexOutOfBoundsException("posição:" + pos + " não existe!");
         }
-        NoLista p = primeiro;
+        NoLista<T> p = primeiro;
         int cont = 0;
         while (p != null) {
             if (cont == pos) {
@@ -128,7 +128,7 @@ public class ListaEncadeada<T> implements Lista<T> {
             cont++;
             p = p.getProx();
         }
-        return -1;
+        return null;
 
     }
 
