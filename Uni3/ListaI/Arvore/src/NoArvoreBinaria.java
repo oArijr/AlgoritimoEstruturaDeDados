@@ -29,7 +29,13 @@ public class NoArvoreBinaria<T> {
     }
 
     public String imprimePre() {
-        return "";
+        String str = "";
+
+		str += "<" + this.info.toString();
+		str += this.esq != null ? this.esq.imprimePre() : "<>";
+		str += this.dir != null ? this.dir.imprimePre() : "<>";
+
+		return str + ">";
     }
 
     public T getInfo() {
