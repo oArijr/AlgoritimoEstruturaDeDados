@@ -41,5 +41,25 @@ public class NoArvoreBST<T extends Comparable<T>> extends NoArvoreBinaria<T> {
             }
         }
     }
+
+    public NoArvoreBST<T> buscarFilhoUnico() {
+        if(this.getEsq() != null){
+            return (NoArvoreBST<T>) this.getEsq();
+        } else {
+            return (NoArvoreBST<T>) this.getDir();
+        }
+    }
+
+    public int getGrau() {
+        int grau = 0;
+        if(this.getEsq() != null){
+            grau++;
+        }
+        if(this.getDir() != null){
+            grau++;
+        }
+
+        return grau;
+    }
     
 }
