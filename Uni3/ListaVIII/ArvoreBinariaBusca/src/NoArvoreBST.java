@@ -92,6 +92,6 @@ public class NoArvoreBST<T extends Comparable<T>> extends NoArvoreBinaria<T> {
     }
 
     public NoArvoreBST<T> buscarPai() {
-       
+       return null;
     }
 }

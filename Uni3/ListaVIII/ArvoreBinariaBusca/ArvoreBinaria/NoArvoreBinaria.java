@@ -38,6 +38,16 @@ public class NoArvoreBinaria<T> {
 		return str + ">";
     }
 
+    public String imprimeEmOrdem(){
+        String str = "";
+
+		str += this.esq != null ? this.esq.imprimePre() : "";
+        str += "<" + this.info.toString();
+		str += this.dir != null ? this.dir.imprimePre() : "";
+
+		return str;
+    }
+
     public T getInfo() {
         return info;
     }
