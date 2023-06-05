@@ -30,7 +30,7 @@ public class Principal {
         System.out.println(arvore);
         System.out.println(arvore.pertence(2).getInfo());
         System.out.println(arvore.pertence(3).getInfo());
-        System.out.println(arvore.pertence(11));
+        System.out.println(arvore.pertence(11).getInfo());
         System.out.println(arvore.pertence(8).getInfo());
         System.out.println(arvore.pertence(6).getInfo());
         System.out.println(arvore.caminho(5));

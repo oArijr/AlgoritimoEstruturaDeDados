@@ -1,4 +1,5 @@
 
+
 // Ari Elias da Silva Júnior
 public class Arvore<T> {  // contribui��o do Jonathan
 
